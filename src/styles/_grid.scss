@@ -1,0 +1,85 @@
+@import "values";
+
+.flexRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 20px;
+  .flexSpacer {
+    flex: 1 1 10%;
+    @media only screen and (max-width: 1050px) {
+      flex: 0 1 50px;
+    }
+
+    @media only screen and (max-width: 850px) {
+      flex: 0 1 20px;
+    }
+
+    @include tablet {
+      flex: 0 0 15px;
+    }
+    @include mobile {
+      flex: 0 0 15px;
+    }
+  }
+  .flexMainCol {
+    flex: 1 1 80%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+
+    &.withBorderBottom {
+    border-bottom: 1px solid $grey;
+
+    @include mobile {
+        border-bottom: none;
+    };
+}
+  }
+}
+
+.pageHeader {
+  flex: 1 1 100%;
+}
+
+.leftSection {
+  flex: 1 1 50%;
+  @include tablet {
+    flex: 1 1 100%
+  }
+}
+
+.rightRail {
+  flex: 0 0 270px;
+  padding: 0 0 0 20px;
+  border-left: 1px solid $grey;
+  margin-left: 30px;
+  position: relative;
+  height: auto;
+
+  @media only screen and (max-width: 850px) {
+    flex: 0 0 240px;
+    margin-left: 20px;
+  }
+
+
+  @include tablet {
+    flex: 1 1 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  @include mobile {
+      border-top: 3px solid $darkgrey;
+      padding-top: 30px;
+  };
+}
+
+.flexSide {
+    flex:1 1;
+}
+
+.full-width {
+  width: 100%;
+}
